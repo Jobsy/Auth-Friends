@@ -7,13 +7,19 @@ export default function LoginForm(props) {
     const passwordRef = useRef();
 
     const submit = () => {
+      console.log("...:", {
+          
+        username: userNameRef.current.value,
+        password: passwordRef.current.value,
+    })
         axios.post("http://localhost:5000/api/login", {
-            userName: userNameRef.current.value,
+          
+            username: userNameRef.current.value,
             password: passwordRef.current.value,
         })
         .then(res => {
             // debugger
-            localStorage.setItem("token", res.data.token)
+            localStorage.setItem("token", res.data.payload)
             // props.history.push("/");
         });
     };
