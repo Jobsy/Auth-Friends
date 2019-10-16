@@ -13,6 +13,9 @@ export function Container(props) {
           <NavLink exact to="/">Login</NavLink>
           {/* <NavLink to="/friends">Friends List</NavLink> */}
         </span>
+
+        <button onClick={onLogout}>Logout</button>
+
       </nav>
 
       <main>
