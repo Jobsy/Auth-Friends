@@ -1,5 +1,7 @@
 
 import React, { useState, useEffect } from "react";
+import { Route, NavLink, withRouter, Redirect } from 'react-router-dom';
+
 import axiosWithAuth from "../axios";
 import axios from "axios";
 
@@ -24,6 +26,10 @@ export default function FriendsList(props) {
 
   return (
     <div>
+       <span>
+          {/* <NavLink exact to="/">Login</NavLink> */}
+          <NavLink to="/friends">Friends List</NavLink>
+        </span>
       {
         friends.map(friend => (
           <div>
@@ -38,7 +44,7 @@ export default function FriendsList(props) {
           </div>
         ))
       }
-      <FriendsForm />
+      <FriendsForm setFriends={setFriends}/>
     </div>
   )
 }
@@ -66,7 +72,10 @@ function FriendsForm(props) {
     // axios
     axiosWithAuth().post('http://localhost:5000/api/friends', newFriend)
       .then(response => {
-        console.log(response)
+        console.log("?????: ", response)
+        // setNewFriend(response.data); 
+        props.setNewFriend(response.data)
+        
       })
       .catch(error => {
         console.log(error)

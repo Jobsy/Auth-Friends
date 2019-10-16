@@ -11,7 +11,7 @@ export function Container(props) {
       <nav>
         <span>
           <NavLink exact to="/">Login</NavLink>
-          <NavLink to="/friends">Friends List</NavLink>
+          {/* <NavLink to="/friends">Friends List</NavLink> */}
         </span>
       </nav>
 
