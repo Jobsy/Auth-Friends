@@ -4,7 +4,10 @@ import LoginForm from "./LoginForm";
 import FriendsList from "./FriendsList";
 
 export function Container(props) {
-  // const 
+  const onLogout = () => {
+    localStorage.clear();
+    props.history.replace("/");
+  } 
 
   return (
     <div>
