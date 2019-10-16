@@ -63,8 +63,8 @@ function FriendsForm(props) {
 
   const submitHandler = e => {
     e.preventDefault()
-    axios
-    .post('http://localhost:5000/api/friends', newFriend)
+    // axios
+    axiosWithAuth().post('http://localhost:5000/api/friends', newFriend)
       .then(response => {
         console.log(response)
       })
