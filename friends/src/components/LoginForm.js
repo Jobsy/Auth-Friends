@@ -37,7 +37,7 @@ export default function LoginForm(props) {
             </div>
 
             <div>
-                <button onClick={submit}>Submit</button>
+                <button onClick={submit}>Login</button>
             </div>
         </div>
     );

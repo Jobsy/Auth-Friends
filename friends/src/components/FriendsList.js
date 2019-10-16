@@ -26,10 +26,10 @@ export default function FriendsList(props) {
 
   return (
     <div>
-       <span>
-          {/* <NavLink exact to="/">Login</NavLink> */}
+       {/* <span>
+          <NavLink exact to="/">Login</NavLink>
           <NavLink to="/friends">Friends List</NavLink>
-        </span>
+        </span> */}
       {
         friends.map(friend => (
           <div>

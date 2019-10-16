@@ -13,8 +13,8 @@ export function Container(props) {
     <div>
       <nav>
         <span>
-          <NavLink exact to="/">Login</NavLink>
-          {/* <NavLink to="/friends">Friends List</NavLink> */}
+          <NavLink exact to="/">Login</NavLink><br />
+          <NavLink to="/friends">Friends List</NavLink><br />
         </span>
 
         <button onClick={onLogout}>Logout</button>
@@ -31,14 +31,14 @@ export function Container(props) {
         <Route
           exact
           path="/friends"
-          render={props => withAthCheck(FriendsList, props)}
+          render={props => withAuthCkeck(FriendsList, props)}
         />
       </main>
     </div>
   );
 }
 
-function withAthCheck(Component, props) {
+function withAuthCkeck(Component, props) {
   if (localStorage.getItem("token")) {
     return <Component {...props} />
   }
